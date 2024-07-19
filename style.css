@@ -5,7 +5,9 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    background-color: black;
 }
 
 .container {
@@ -13,8 +15,23 @@ body {
     height: 100vh;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
 .logo {
     padding: 10px 20px;
+    color: white;
+}
+
+.lang {
+    padding: 10px 20px;
+    color: white;
+    background-color: transparent;
+    border-width: 1;
+    border-style: solid;
+    border-color: white;
 }
 
 img {
