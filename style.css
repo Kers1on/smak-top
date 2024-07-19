@@ -26,12 +26,10 @@ nav {
 }
 
 .lang {
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     color: white;
     background-color: transparent;
-    border-width: 1;
-    border-style: solid;
-    border-color: white;
+    text-decoration: none;
 }
 
 img {
