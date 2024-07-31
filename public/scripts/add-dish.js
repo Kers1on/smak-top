@@ -1,7 +1,6 @@
 document.getElementById('dishForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Збираємо значення з полів форми
     const photo = document.getElementById('photo').files[0];
     const title = document.getElementById('title').value;
     const description = document.getElementById('description').value;
@@ -14,14 +13,12 @@ document.getElementById('dishForm').addEventListener('submit', function(event) {
         reader.onloadend = function() {
             const photoDataUrl = reader.result;
 
-            // Створюємо об'єкт JSON з зібраними значеннями
             const dish = {
                 photo: photoDataUrl,
                 title: title,
                 description: description
             };
 
-            // Відправляємо дані на сервер
             fetch('/api/dishes', {
                 method: 'POST',
                 headers: {
@@ -31,7 +28,6 @@ document.getElementById('dishForm').addEventListener('submit', function(event) {
             })
             .then(response => response.json())
             .then(data => {
-                // Скидаємо форму
                 document.getElementById('dishForm').reset();
                 alert('Блюдо додано успішно!');
                 window.location.href = 'index.html';
@@ -45,13 +41,11 @@ document.getElementById('dishForm').addEventListener('submit', function(event) {
         if (photo) {
             reader.readAsDataURL(photo);
         } else {
-            // Створюємо об'єкт JSON без фото
             const dish = {
                 title: title,
                 description: description
             };
 
-            // Відправляємо дані на сервер
             fetch('/api/dishes', {
                 method: 'POST',
                 headers: {
@@ -61,7 +55,6 @@ document.getElementById('dishForm').addEventListener('submit', function(event) {
             })
             .then(response => response.json())
             .then(data => {
-                // Скидаємо форму
                 document.getElementById('dishForm').reset();
                 alert('Блюдо додано успішно!');
                 window.location.href = 'index.html';
@@ -72,5 +65,4 @@ document.getElementById('dishForm').addEventListener('submit', function(event) {
             });
         }
     }
-
 });

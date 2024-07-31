@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
+const { v4: uuidv4 } = require('uuid');
 
 const app = express();
 const PORT = 3000;
@@ -23,6 +24,7 @@ app.get('/api/dishes', (req, res) => {
 
 app.post('/api/dishes', (req, res) => {
     const newDish = req.body;
+    newDish.id = uuidv4();
 
     fs.readFile(DB_FILE, 'utf8', (err, data) => {
         if (err) {
@@ -36,6 +38,26 @@ app.post('/api/dishes', (req, res) => {
                 return res.status(500).send('Помилка запису бази даних');
             }
             res.status(201).json(newDish);
+        });
+    });
+});
+
+app.delete('/api/dishes/:id', (req, res) => {
+    const dishId = req.params.id;
+
+    fs.readFile(DB_FILE, 'utf8', (err, data) => {
+        if (err) {
+            return res.status(500).send('Помилка читання бази даних');
+        }
+        let dishes = JSON.parse(data || '[]');
+
+        dishes = dishes.filter(dish => dish.id !== dishId);
+
+        fs.writeFile(DB_FILE, JSON.stringify(dishes, null, 2), (err) => {
+            if (err) {
+                return res.status(500).send('Помилка запису бази даних');
+            }
+            res.status(204).send();
         });
     });
 });
