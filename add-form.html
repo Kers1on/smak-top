@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Dish</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h1 {
+            text-align: center;
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 16px;
+            color: #666666;
+            margin-bottom: 5px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            height: 100px;
+        }
+        .form-group button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <a class="back-button" href="index.html"><- Назад</a>
+    <div class="form-container">
+        <h1>Додати Блюдо</h1>
+        <form>
+            <!-- Поле для завантаження фото -->
+            <div class="form-group">
+                <label for="photo">Фото:</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+            </div>
+            <!-- Поле для назви блюда -->
+            <div class="form-group">
+                <label for="title">Назва:</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <!-- Поле для опису блюда -->
+            <div class="form-group">
+                <label for="description">Опис:</label>
+                <textarea id="description" name="description"></textarea>
+            </div>
+            <!-- Кнопка для додавання блюда -->
+            <div class="form-group">
+                <button type="submit">Додати Блюдо</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
