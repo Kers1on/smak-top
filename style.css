@@ -6,8 +6,6 @@
 
 body {
     font-family: 'Courier New', Courier, monospace;
-    font-weight: 700;
-    background-color: black;
 }
 
 .container {
@@ -22,14 +20,31 @@ nav {
 
 .logo {
     padding: 10px 20px;
-    color: white;
+    font-size: 36px;
+    font-weight: 700;
 }
 
 .lang {
     /* padding: 10px 20px; */
-    color: white;
     background-color: transparent;
     text-decoration: none;
+    color: black;
+}
+
+.categories {
+    display: flex;
+}
+
+.category {
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-weight: 700;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 7px;
+    border-style: solid;
+    cursor: pointer;
+    background-color: white;
 }
 
 img {
