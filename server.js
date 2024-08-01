@@ -22,6 +22,25 @@ app.get('/api/dishes', (req, res) => {
     });
 });
 
+app.get('/api/dishes/:id', (req, res) => {
+    const dishId = req.params.id;
+
+    fs.readFile(DB_FILE, 'utf-8', (err, data) => {
+        if (err) {
+            console.error('Помилка читання бази даних', err);
+            return res.status(500).send('Помилка читання бази даних');
+        }
+        const dishes = JSON.parse(data || '[]');
+        let dish = dishes.find(dish => dish.id === dishId);
+
+        if (dish) {
+            res.json(dish);
+        } else {
+            res.status(404).send('Блюдо не знайдено');
+        }
+    });
+});
+
 app.post('/api/dishes', (req, res) => {
     const newDish = req.body;
     newDish.id = uuidv4();
