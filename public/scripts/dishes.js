@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
+    window.loadDish = function(button) {
+        const dishElement = button.closest('.dish');
+        const dishId = dishElement.getAttribute('data-id');
+        window.location.href = `dish.html?id=${dishId}`;
+    };
+
     function loadDishes() {
         fetch('/api/dishes')
         .then(response => response.json())
@@ -41,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <img src="${dish.photo}" alt="${dish.title}">
                     <div class="dish-name">${dish.title}</div>
                     <div class="dish-describing">${dish.description}</div>
-                    <a href="dish.html?id=${dish.id}">Читати далі</a>
+                    <button onclick="loadDish(this)">Читати далі</button>
                     <button onclick="deleteDish(this)">Видалити</button>
                 `;
                 dishesDiv.appendChild(dishElement);
