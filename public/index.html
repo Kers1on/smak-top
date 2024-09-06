@@ -1,34 +1,89 @@
 <!DOCTYPE html>
-<html lang="ua">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/dishes.js"></script>
-    <title>SmakTop</title>
+    <title>smakyi</title>
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <div class="logo">SmakTOP</div>
-            <a class="lang" href="add-form.html">
-                Додати
-            </a>
-        </nav>
-
-        <div class="categories">
-            <button class="category">Мʼясо</button>
-            <button class="category">Риба</button>
-            <button class="category">Супи</button>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <img src="/img/logo_web.png" alt="logo" class="navbar__logo">
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="navbar__search">
+                <form action="" class="search-bar">
+                    <input type="search" placeholder="Find an amogus" id="search">
+                </form>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links"> Random </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links"> Recipes </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links"> Collections </a>
+                </li>
+            </ul>
         </div>
-
-        <div class="dishes" id="dishes"></div>
-
-        <div class="page-changer"> 
-            <button><</button> <div id="page-number">1</div> <button>></button>
-        </div>
+    </nav>
     
-        <footer></footer>
+    <div class="menu">
+        <div class="menu__container">
+            <h1 style="color: beige; margin: 0 180px;">something inmportant</h1>
+        </div>
+    </div> 
+
+    <div class="categories">
+        <div class="categories-container-tittle">
+            <div class="arrow-left"></div>
+            <div class="browse-categories">
+                <div class="wrapped-text">
+                    BROWSE CATEGORIES
+                </div>
+            </div>
+            <div class="arrow-right"></div>
+        </div>
+        
+        <!-- <h2>BROWSE CATEGORIES</h2> -->
+        <div class="categories__container">
+            <button class="scroll-btn left-btn">←</button>
+            <div class="scroll-list">
+                <div class="scroll-item">Item 1</div>
+                <div class="scroll-item">Item 2</div>
+                <div class="scroll-item">Item 3</div>
+                <div class="scroll-item">Item 4</div>
+            </div>
+            <button class="scroll-btn right-btn">→</button>
+        </div>
     </div>
+    <div class="recipes">
+        <div class="recipes__container">
+            <div class="recipes__row">
+                <div class="recipes_card">
+                    <div class="card">t</div>
+                </div>
+                <div class="recipes_card">
+                    <div class="card">t</div>
+                </div>
+                <div class="recipes_card">
+                    <div class="card">t</div>
+                </div>
+            </div>
+            <div class="recipes-btn">
+                <button class="continue">go</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer__container"></div>
+    </footer>
+    <script src="/scripts/app.js"></script>
 </body>
 </html>
